@@ -17,17 +17,19 @@ class Grasp extends JFrame {
         frame.setSize(600, 400);
 
         // WelcomeLabel
-        JLabel WelcomeLabel = new JLabel(
-                "Welcome to the Extreme School Calculator! Please pick a button to visit different calculators!");
+        JLabel WelcomeLabel = new JLabel("<html>Welcome to the Extreme School Calculator!<br/> Please pick a button to visit different calculators!</html>");
+        WelcomeLabel.setFont(new Font ("Karla", Font.PLAIN, 25));
 
         // Creating the EdenRedActionPanel and adding components
         JPanel EdenRedPanel = new JPanel(); // the panel is not visible in output
         EdenRedPanel.setVisible(false);
+        EdenRedPanel.setFont(new Font("karla", Font.PLAIN, 15));
         EdenRedPanel.setPreferredSize(new Dimension(400, 200));
         EdenRedPanel.setBackground(Color.lightGray);
         EdenRedPanel.setLayout(new FlowLayout(FlowLayout.CENTER ,30, 15)); 
 
 
+        JLabel IntroLabel1 = new JLabel("<html>Welcome to the EdenRed Expenditure Calculator. <br/> After inputing your current balance and the day of the month, <br/> we will calculate how much money you can use per day!</html>");
         JLabel label = new JLabel("Enter your current card balance");
         JTextField tf = new JTextField(10); // accepts upto 10 characters
         JLabel labelA = new JLabel("Enter the day of the month");
@@ -58,6 +60,7 @@ class Grasp extends JFrame {
             }
         });
 
+        EdenRedPanel.add(IntroLabel1);
         EdenRedPanel.add(label);
         EdenRedPanel.add(tf);
         EdenRedPanel.add(labelA);
@@ -72,6 +75,8 @@ class Grasp extends JFrame {
         StudyHoursPanel.setBackground(Color.lightGray);
         StudyHoursPanel.setLayout(new FlowLayout(FlowLayout.CENTER ,30, 15)); 
 
+       
+        JLabel IntroLabel2 = new JLabel("<html>Welcome to the Study Hours Predictor. <br/> After inputing your current year and term, <br/> we will accuratelly predict whether you have study hours or not!</html>");
         JLabel label2 = new JLabel("Enter your current year of study");
         JTextField tf2 = new JTextField(10); // accepts upto 10 characters
         JLabel label2A = new JLabel("Enter the current term of the school year");
@@ -118,6 +123,7 @@ class Grasp extends JFrame {
             }
         });
 
+        StudyHoursPanel.add(IntroLabel2);
         StudyHoursPanel.add(label2);
         StudyHoursPanel.add(tf2);
         StudyHoursPanel.add(label2A);
@@ -136,7 +142,8 @@ class Grasp extends JFrame {
         AnimalAgePanel.setBackground(Color.lightGray);
         AnimalAgePanel.setLayout(new FlowLayout(FlowLayout.CENTER ,30, 15)); 
 
-        JRadioButton radioDog = new JRadioButton("Dog");
+       
+        JLabel IntroLabel3 = new JLabel("<html>Welcome to the Animal Age Calculator. <br/> After inputing your current age and picking an animal, <br/> we will calculate your age in that specific animal's years!</html>");        JRadioButton radioDog = new JRadioButton("Dog");
         JRadioButton radioCat = new JRadioButton("Cat");
         JRadioButton radioChicken = new JRadioButton("Chicken");
         JLabel label3A = new JLabel("Enter your current age");
@@ -183,6 +190,7 @@ class Grasp extends JFrame {
             }
         });
 
+        AnimalAgePanel.add(IntroLabel3);
         AnimalAgePanel.add(radioDog);
         AnimalAgePanel.add(radioCat);
         AnimalAgePanel.add(radioChicken);
@@ -198,6 +206,8 @@ class Grasp extends JFrame {
         ApWellbeingPanel.setBackground(Color.lightGray);
         ApWellbeingPanel.setLayout(new FlowLayout(FlowLayout.LEADING ,30, 15)); 
 
+
+        JLabel IntroLabel4 = new JLabel("<html>Welcome to the Wellbeing Predictor. <br/> After inputing your APs from each block, <br/> we will assign a wellbeing points (out of 5) <br/> and predict your wellbeing for the year!</html>");
 
         //Block1
         JLabel label4 = new JLabel("<html><br/>How many of these classes did you choose this year?</html>");
@@ -266,6 +276,7 @@ class Grasp extends JFrame {
             }
         });
 
+        ApWellbeingPanel.add(IntroLabel4);
         ApWellbeingPanel.add(label4);
         ApWellbeingPanel.add(Block1);
         ApWellbeingPanel.add(tf4);
@@ -288,7 +299,8 @@ class Grasp extends JFrame {
          HowLeafPanel.setLayout(new FlowLayout(FlowLayout.CENTER ,30, 15)); 
  
  
-         JLabel label5 = new JLabel("<html>Enter a string and we will give you a count of how <br/> many times the word community appears?</html>");
+         JLabel IntroLabel5 = new JLabel("<html>Welcome to the 'how Leaf is your text' Predictor. <br/> After inputing your text, <br/> we will tell you how many times it included the word COMMUNITY!</html>");
+         JLabel label5 = new JLabel("Enter your text");
          JTextArea tf5 = new JTextArea();  
          tf5.setLineWrap(true);
          tf5.setWrapStyleWord(true);
@@ -378,6 +390,7 @@ class Grasp extends JFrame {
              }
          });
  
+        HowLeafPanel.add(IntroLabel5);
          HowLeafPanel.add(label5);
          HowLeafPanel.add(tf5);
          HowLeafPanel.add(calculate5);
@@ -399,6 +412,7 @@ class Grasp extends JFrame {
                 StudyHoursPanel.setVisible(false);
                 AnimalAgePanel.setVisible(false);
                 ApWellbeingPanel.setVisible(false);
+                HowLeafPanel.setVisible(false);
 
             }
         });
